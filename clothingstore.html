@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow">
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F2F3F4 ;
+
+}
+
+.header {
+  padding: 10px 10px;
+
+  background-color: #B3B6B7;
+
+  font-family: Arial, Helvetica, sans-serif;
+    /*rgba(150, 290, 250, 0.2);*/
+
+}
+.header ul{
+    overflow: auto;
+}
+.header li{
+    float:left;
+    list-style: none;
+    margin: 15px 10px;
+
+}
+.header  li a{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: black;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      right:-600px;
+}
+.header  li a:hover{
+    color: red
+}
+.pic{
+  float: left;
+  width: 100px;
+  position: relative;
+  right: -90px;
+}
+.btn2{
+  position: relative;
+  top: 25px;
+  right: -690px;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+    background-color:#3498DB;
+  color: white;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+}
+.btn2:hover {
+  background-color: #2874A6;
+
+}
+
+.bg {
+  padding: 16px;
+}
+.img{
+
+margin: -130px -15px;
+  width:102.3%;
+  height: 700px;
+  /*opacity: 0.5;*/
+
+}
+.content1{
+  padding: 120px ;
+  position: absolute;
+  right: 400px;
+  color:#3498DB;
+  font-size: 62px;
+  font-family: sans-serif;
+}
+.gallery {
+  margin: 5px 15px;
+  padding: 300px 90px;
+position: relative;
+right: -5px;
+  float: left;
+  width: 180px;
+
+}
+.gallery:hover {
+  opacity: 0.4;
+}
+
+.gallery img {
+  width: 200%;
+  height: auto;
+}
+
+.desc {
+/*padding: 2px -7px;*/
+
+  text-align: justify;
+    width: 200%;
+}
+.desc h3{
+  color: #3498DB;
+  line-height: 190%;
+}
+.features{
+  float: left;
+  padding: 2px 65px;
+  position: relative;
+  left:-367px;
+top:-190px;
+line-height: 190%;
+margin: -20px -27px;
+
+overflow: visible;
+
+/*  background-color: #A6ACAF;*/
+}
+.fa{
+  position: relative;
+  padding: 10px 230px;
+  float: right;
+  right: -90px;
+  top:-130px;
+
+}
+.content2{
+  position: relative;
+  padding: 1px -5px;
+  float: right;
+  right: -520px;
+  top:-105px;
+
+    width: 25%;
+  line-height: 190%;
+}
+.content3{
+  position: relative;
+  padding: 1px -5px;
+  float: right;
+  right: -530px;
+  top:-10px;
+
+    width: 25%;
+  line-height: 190%;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.content4{
+  position: relative;
+  padding: 1px -5px;
+  float: right;
+  right: -850px;
+  top:-360px;
+
+    width: 20%;
+  line-height: 190%;
+}
+.content5{
+  position: relative;
+  padding: 1px -5px;
+  float: right;
+  right: -850px;
+  top:-260px;
+
+    width: 20%;
+  line-height: 190%;
+}
+.content6{
+  padding: 120px ;
+  position: absolute;
+  right: 400px;
+  bottom: -1790px;
+  color:#3498DB;
+  font-size: 62px;
+  font-family: sans-serif;
+}
+.gallery1{
+  margin: -182px 30px;
+  padding: 300px 80px;
+position: relative;
+right: -5px;
+top: -90px;
+  float: left;
+  width: 180px;
+
+}
+.gallery1:hover {
+  opacity: 0.4;
+}
+
+.gallery1 img {
+  width: 190%;
+  height:auto;
+}
+
+.desc1 {
+/*padding: 2px -7px;*/
+
+  text-align: center;
+    width: 100%;
+}
+.desc1 h3{
+  color: #3498DB;
+  line-height: 190%;
+}
+.mySlides {display: none width:220px;}
+
+
+/* Slideshow container */
+.slideshow-container {
+  width: 1000px;
+
+
+right:-80px;
+  position: relative;
+  bottom:-210px;
+  margin:auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+
+
+/* Number text (1/3 etc) */
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 7px;
+  position: relative;
+  bottom:-215px;
+  right:10px;
+  align:center;
+
+
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+/*.sticky + .bg  {
+  padding-top: 102px;
+}*/
+</style>
+</head>
+<body>
+
+
+
+<div class="header" id="myHeader">
+  <ul>
+    <img class="pic" src="logo1.png"  >
+  <li><a href="Home.html"><b>HOME</b></a></li>
+  <li><a href="#"><b>LIVE DEMO</b></a></li>
+  <li><a href="#"><b>LIVE DEMO BLOCKS</b></a></li>
+  <button class="btn2"><b>BUY NOW</b></button>
+  </ul>
+</div>
+
+<div class="bg">
+  <img src="new-collection-banner-template_1361-1325.jpg" class="img">
+</div>
+<div class="content1">
+  <p>About Us</p>
+
+</div>
+<div class="gallery">
+  <a target="_blank" href="hannah-morgan-ycVFts5Ma4s-unsplash.jpg">
+    <img src="hannah-morgan-ycVFts5Ma4s-unsplash.jpg" width="600" height="400">
+  </a>
+  <div class="desc"><h3>Trends <br> Newest trends</h3> <p>We always follow trends and try to collect the latest and most fashionable clothes in our shop. We have magazines, in which you can check out styles and colors.</p> </div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="images (22).jpg">
+    <img src="images (22).jpg"  width="600" height="400">
+  </a>
+  <div class="desc"><h3>Prices <br> Best prices</h3> <p>In our store, you would find the best prices in the city. Every month we provide our customers with discounts and sales on certain categories of goods.</p>  </div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="pexels-polina-tankilevitch-3735641.jpg">
+    <img src="pexels-polina-tankilevitch-3735641.jpg"  width="600" height="400">
+  </a>
+  <div class="desc"><h3>Collections <br>Pre collections</h3> <p>It's possible to buy the best pieces of clothes from previous collections with huge discounts. Every Saturday we provide our customers with sales.</p> </div>
+</div>
+<div class="features" >
+  <p style="position: relative; bottom:-89px;"><b>FEATURES</b></p>
+  <p style="font-size: 35px; color:#3498DB; width: 50%; position: relative; bottom:-89px;"><b>Features Our Store</b></p>
+  <i style="font-size:64px" class="fa">&#xf02b;</i> <br><br>
+<p class="content2"><b>Sale</b> <br>Check out our best sales and discounts. </p>
+ <i style="font-size:64px ;position:relative;  top: -90px;" class="fa">&#xf08a;</i> <br><br>
+<p class="content3"><b>Our Clients</b> <br>Our clients are always satisfied with our work. </p>
+<i style='font-size:54px; position:relative; right:-440px; top: -440px;' class='fa'>&#xf0f9;</i><br><br>
+<p class="content4"><b>Delivery</b> <br>We provide delivery within 3 days. </p>
+<i style="font-size:54px; position:relative; right:-440px; top: -340px;" class="fa">&#xf087;</i><br><br>
+<p class="content5"><b>Warranty</b> <br>You can bring back the clothes within 1 month. </p>
+
+</div>
+<div class="content6">
+  <p>Our Product</p>
+
+</div>
+<div class="gallery1">
+  <a target="_blank" href="mahdi-bafande-qdPLxl-J6l0-unsplash.jpg">
+    <img src="mahdi-bafande-qdPLxl-J6l0-unsplash.jpg" width="600" height="400">
+  </a>
+  <div class="desc1"><h3>SHIRT <br> $ 69.99</h3>  </div>
+</div>
+
+<div class="gallery1">
+  <a target="_blank" href="mohamad-khosravi-Ll6ggwPpKIo-unsplash.jpg">
+    <img src="mohamad-khosravi-Ll6ggwPpKIo-unsplash.jpg"  width="800" height="400">
+  </a>
+  <div class="desc1"><h3>LIGHT SHIRT <br> $ 89.99</h3>   </div>
+</div>
+<div class="gallery1">
+  <a target="_blank" href="mohamad-khosravi-d54wbtjedog-unsplash.jpg">
+    <img src="mohamad-khosravi-d54wbtjedog-unsplash.jpg"  width="800" height="400">
+  </a>
+  <div class="desc1"><h3>JACKET <br>$ 129.99</h3>   </div>
+</div>
+
+
+<div  >
+  <p style="  padding: 120px ;
+    position: absolute;
+    right: 320px;
+    text-align: center;
+    color:#3498DB;
+    font-size: 52px;
+    font-family: sans-serif;
+    bottom:-2590px;">Be the first to know?</p>
+    <p style="  padding: 120px ;
+      position: absolute;
+      right: 720px;
+      text-align: center;
+      color:black;
+      font-size: 22px;
+      font-family: sans-serif;
+      bottom:-2670px;">Subscribe Now</p>
+      <p style="  padding: 120px ;
+        position: absolute;
+        right: 220px;
+        text-align: center;
+        color:#D98880 ;
+        font-size: 18px;
+        font-family: sans-serif;
+        bottom:-2665px;">* Invite a friend and get a discount - 10%</p><br><br>
+        <input type="text" class="form-control" placeholder="Please Enter Your Email" id="mail" name="email"
+        style="  padding: 20px ;
+          position: absolute;
+          right: 340px;
+          width: 630px;
+          align: center;
+border:white;
+          font-family: sans-serif;
+          bottom:-2630px;">
+        <button type="submit" class="btn btn-primary" style="
+          position: absolute;
+          right: 370px;
+          width: 100px;
+          align: center;
+          background-color:white;
+          color: #3498DB;
+          font-size: 16px;
+          padding: 14px 30px;
+          border: none;
+          cursor: pointer;
+
+          text-align: center;
+          font-family: sans-serif;
+          bottom:-2630px;"><b>Subscribe</b></button>
+
+
+</div>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+
+  <img src="jose-martinez-Q76SMw8HVYk-unsplash.jpg" style="width:90%">
+
+</div>
+
+<div class="mySlides fade">
+
+  <img src="nikhil-uttam-QrOdhsMAQw8-unsplash.jpg" style="width:80%">
+
+</div>
+
+<div class="mySlides fade">
+
+  <img src="valerie-elash-gsKdPcIyeGg-unsplash.jpg" style="width:80%">
+
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<div style="  bottom:-4090; padding: 250px ;" >
+  <p style="
+    position: absolute;
+    right: 510px;
+    text-align: center;
+    color:#3498DB;
+    font-size: 52px;
+    font-family: sans-serif;
+  ">Our Location</p><br><br>
+  <p style="  padding: 120px ;
+    position: absolute;
+    right: 820px;
+    text-align: left;
+    color:black;
+    font-size: 22px;
+    font-family: sans-serif;
+    "><b>Email</b> <br><br> <a href="url" style="text-decoration: none;">company@mobirise.com</a> </p>
+    <p style="  padding: 100px ;
+      position: absolute;
+      right: 300px;
+      text-align: left;
+      color:black;
+      font-size: 22px;
+      font-family: sans-serif;
+      "><b>Phone</b><br><br> <a href="url" style="text-decoration: none;">+573 1235 5324</a> </p>
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13271.272568920722!2d72.7924497!3d33.739518399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa78bebcbc01b%3A0x8c5646caf88f66a2!2sWah%20Cantt%20Barrier%20No.%201!5e0!3m2!1sen!2s!4v1647000027999!5m2!1sen!2s" width="650" height="450" style="border:0; position:relative; right:-640px;" allowfullscreen="" loading="lazy"></iframe>
+
+<img src="photo-1558769132-cb1aea458c5e.jpg" style="position:relative; ;right:600px;width="520" height="450""><br><br><br><br>
+<p style="text-align: center;"><b>© Copyright 2019 Mobirise – Clothing Website Template – All Rights Reserved</b></p>
+
+
+</body>
+</html>
